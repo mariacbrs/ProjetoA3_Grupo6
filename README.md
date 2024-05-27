@@ -1,4 +1,3 @@
-# ProjetoA3_Grupo6
 ## Sobre o Projeto:
 O projeto que estamos desenvolvendo é focado na área de Saúde e Bem-Estar, alinhado com o Objetivo de Desenvolvimento Sustentável 3 (ODS 3). Estamos criando um software para a administração de clínicas e hospitais, com diversas funcionalidades importantes.
  
