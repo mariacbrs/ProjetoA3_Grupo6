@@ -6,6 +6,8 @@ Entre suas funcionalidades a principal se trata do sistema de login que diferenc
 ## Membros da equipe:
 Maria Clara Borges Rodrigues Santos, Giovanna Thomazzini, Vitória Maia, Letícia Leão e Natali Flores.
 
+## Ambiente de desenvolvimento:
+MySQL Workbench -> Banco de Dados, NetBeans IDE 13 -> Desenvolvimento de Sistemas.
 
 
 ## About the Project:
@@ -15,3 +17,6 @@ One of its key features is the login system that distinguishes between two types
 
 ## Team members:
 Maria Clara Borges Rodrigues Santos, Giovanna Thomazzini, Vitória Maia, Letícia Leão and Natali Flores.
+
+## Development Environment:
+MySQL Workbench -> Database, NetBeans IDE 13 -> System Development.
