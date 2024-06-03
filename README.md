@@ -12,6 +12,7 @@ MySQL Workbench -> Banco de Dados, NetBeans IDE 13 -> Desenvolvimento de Sistema
 
 ## Estrutura do projeto:
 Libraries: java.sql, java.swing, java.awt
+
 Classes Principais: Consulta, Paciente, Medico e Usuário.
 
 
@@ -29,4 +30,5 @@ MySQL Workbench -> Database, NetBeans IDE 13 -> System Development.
 
 ## Project Structure:
 Libraries: java.sql, java.swing, java.awt
+
 Main Classes: Appointment, Patient, Doctor, and User.
