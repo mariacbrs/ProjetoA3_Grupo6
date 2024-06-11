@@ -19,7 +19,7 @@ MySQL Workbench -> Banco de Dados, NetBeans IDE 13 -> Desenvolvimento de Sistema
 ## Estrutura do projeto:
 Libraries: java.sql, java.swing, java.awt
 
-Classes Principais:Paciente e Medico.
+Classes Principais: Consulta, Prescrição, Paciente e Medico.
 
 
 ## About the Project:
@@ -43,4 +43,4 @@ MySQL Workbench -> Database, NetBeans IDE 13 -> System Development.
 ## Project Structure:
 Libraries: java.sql, java.swing, java.awt
 
-Main Classes:Patient and Doctor.
+Main Classes: Appointment, Prescription, Patient and Doctor.
