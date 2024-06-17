@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
 public class pacienteClass extends medicoClass {
@@ -83,13 +84,15 @@ public class pacienteClass extends medicoClass {
             if (rs.next()) {
 
                 String pacienteInfo
-                        = "<html>"
+                       = "<html>"
+                        + "<div style='font-size:18px;'>"
                         + "Paciente ID: " + rs.getInt("paciente_id") + "<br>"
                         + "Nome: " + rs.getString("nome") + "<br>"
                         + "Email: " + rs.getString("email") + "<br>"
                         + "Senha: " + rs.getString("senha") + "<br>"
                         + "CPF: " + rs.getString("cpf") + "<br>"
                         + "Telefone: " + rs.getString("telefone")
+                        + "</div>"
                         + "</html>";
 
                 SwingUtilities.invokeLater(() -> showPatientInfo(pacienteInfo));
@@ -113,9 +116,11 @@ public class pacienteClass extends medicoClass {
         JPanel panel = new JPanel();
         JLabel label = new JLabel(pacienteInfo);
 
+        label.setHorizontalAlignment(SwingConstants.CENTER);
         panel.add(label);
         frame.add(panel);
-        frame.setSize(900, 800);
+        frame.setSize(800, 800);
+        frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
 
@@ -192,7 +197,7 @@ public class pacienteClass extends medicoClass {
         }
     }
 
-    //Consulta methods:
+    
     public void viewConsulta() {
 
         String sql = "SELECT * FROM consulta WHERE consulta_id = ? ";
@@ -210,12 +215,14 @@ public class pacienteClass extends medicoClass {
             if (rs.next()) {
 
                 String consultaInfo
-                        = "<html>"
+                            = "<html>"
+                        + "<div style='font-size:18px;'>"
                         + "Consulta ID: " + rs.getInt("consulta_id") + "<br>"
                         + "Data e hora: " + rs.getString("data_hora") + "<br>"
                         + "Motivo da Consulta: " + rs.getString("motivo_C") + "<br>"
                         + "Médico: " + rs.getString("medico_id") + "<br>"
                         + "Paciente: " + rs.getString("paciente_id")
+                        + "</div>"
                         + "</html>";
 
                 SwingUtilities.invokeLater(() -> showConsultaInfo(consultaInfo));
@@ -239,9 +246,11 @@ public class pacienteClass extends medicoClass {
         JPanel panel = new JPanel();
         JLabel label = new JLabel(consultaInfo);
 
+        label.setHorizontalAlignment(SwingConstants.CENTER);
         panel.add(label);
         frame.add(panel);
-        frame.setSize(900, 800);
+        frame.setSize(800, 800);
+        frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
 

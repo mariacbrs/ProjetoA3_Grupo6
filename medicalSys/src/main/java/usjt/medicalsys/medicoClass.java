@@ -1,11 +1,13 @@
 package usjt.medicalsys;
 
+import java.awt.GridBagLayout;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
 public class medicoClass {
@@ -100,6 +102,7 @@ public class medicoClass {
 
                 String medicoInfo
                         = "<html>"
+                        + "<div style='font-size:18px;'>"
                         + "Medico ID: " + rs.getInt("medico_id") + "<br>"
                         + "Nome: " + rs.getString("nome") + "<br>"
                         + "Email: " + rs.getString("email") + "<br>"
@@ -107,6 +110,7 @@ public class medicoClass {
                         + "CPF: " + rs.getString("cpf") + "<br>"
                         + "Telefone: " + rs.getString("telefone") + "<br>"
                         + "Especialidade: " + rs.getString("especialidade")
+                        + "</div>"
                         + "</html>";
 
                 SwingUtilities.invokeLater(() -> showMedicoInfo(medicoInfo));
@@ -129,9 +133,12 @@ public class medicoClass {
         JPanel panel = new JPanel();
         JLabel label = new JLabel(medicoInfo);
 
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        panel.setLayout(new GridBagLayout());
         panel.add(label);
         frame.add(panel);
-        frame.setSize(900, 800);
+        frame.setSize(800, 800);
+        frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
     }
@@ -157,7 +164,7 @@ public class medicoClass {
         }
     }
 
-    //Appointment Methods:
+    //Prescription Methods:
     public void newPrescricao() {
 
         String sql = "INSERT INTO prescricao(descricao, medico_id, paciente_id, consulta_id) VALUES (?, ?, ?, ?) ";
@@ -224,11 +231,13 @@ public class medicoClass {
             if (rs.next()) {
                 String prescricaoInfo
                         = "<html>"
+                        + "<div style='font-size:18px;'>"
                         + "Prescrição ID: " + rs.getInt("prescricao_id") + "<br>"
                         + "Descrição: " + rs.getString("descricao") + "<br>"
                         + "Médico ID: " + rs.getString("medico_id") + "<br>"
                         + "Paciente ID: " + rs.getString("paciente_id") + "<br>"
                         + "Consulta ID: " + rs.getString("consulta_id")
+                        + "</div>"
                         + "</html>";
 
                 SwingUtilities.invokeLater(() -> showPrescricaoInfo(prescricaoInfo));
@@ -252,9 +261,12 @@ public class medicoClass {
         JPanel panel = new JPanel();
         JLabel label = new JLabel(prescricaoInfo);
 
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        panel.setLayout(new GridBagLayout());
         panel.add(label);
         frame.add(panel);
-        frame.setSize(900, 800);
+        frame.setSize(800, 800);
+        frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
     }
