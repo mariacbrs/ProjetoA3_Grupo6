@@ -46,7 +46,7 @@ public class MedicalSys {
                         senha = JOptionPane.showInputDialog("Inserir senha");
                         cpf = JOptionPane.showInputDialog("Inserir cpf");
                         telefone = JOptionPane.showInputDialog("Inserir telefone");
-                        especialidade = JOptionPane.showInputDialog("Inserir especiaidade");
+                        especialidade = JOptionPane.showInputDialog("Inserir especialidade");
 
                         medico.setNome(nome);
                         medico.setEmail(email);
@@ -66,7 +66,7 @@ public class MedicalSys {
                         senha = JOptionPane.showInputDialog("Inserir senha atualizada");
                         cpf = JOptionPane.showInputDialog("Inserir cpf atualizado");
                         telefone = JOptionPane.showInputDialog("Inserir telefone atualizado");
-                        especialidade = JOptionPane.showInputDialog(null, "Inserir especiaidade atualizada");
+                        especialidade = JOptionPane.showInputDialog(null, "Inserir especialidade atualizada");
                         medico_id = Integer.parseInt(JOptionPane.showInputDialog("Inserir o id do médico que deseja atualizar"));
 
                         medico.setNome(nome);
@@ -109,12 +109,10 @@ public class MedicalSys {
                                     descricao = JOptionPane.showInputDialog(null, "Inserir a descrição da prescrição");
                                     medico_id = Integer.parseInt(JOptionPane.showInputDialog("Inserir o id do médico responsável"));
                                     paciente_id = Integer.parseInt(JOptionPane.showInputDialog("Inserir o id do paciente"));
-                                    consulta_id = Integer.parseInt(JOptionPane.showInputDialog("Inserir o id da consulta"));
 
                                     medico.setDescricao(descricao);
                                     medico.setMedico_id(medico_id);
                                     medico.setPaciente_id(paciente_id);
-                                    medico.setConsulta_id(consulta_id);
 
                                     medico.newPrescricao();
                                     break;
@@ -125,13 +123,13 @@ public class MedicalSys {
                                     descricao = JOptionPane.showInputDialog(null, "Inserir a descrição da prescrição atualizada");
                                     medico_id = Integer.parseInt(JOptionPane.showInputDialog("Inserir o id do médico responsável atualizado"));
                                     paciente_id = Integer.parseInt(JOptionPane.showInputDialog("Inserir o id do paciente atualizado"));
-                                    consulta_id = Integer.parseInt(JOptionPane.showInputDialog("Inserir o id da consulta atualizado"));
+
                                     prescricao_id = Integer.parseInt(JOptionPane.showInputDialog("Inserir o id da prescrição que quer atualizar"));
 
                                     medico.setDescricao(descricao);
                                     medico.setMedico_id(medico_id);
                                     medico.setPaciente_id(paciente_id);
-                                    medico.setConsulta_id(consulta_id);
+
                                     medico.setPrescricao_id(prescricao_id);
 
                                     medico.updatePrescricao();
@@ -268,8 +266,8 @@ public class MedicalSys {
 
                                     paciente.setData_hora(data_hora);
                                     paciente.setMotivo_C(motivo_C);
-                                    medico.setMedico_id(medico_id);
-                                    medico.setPaciente_id(paciente_id);
+                                    paciente.setMedico_id(medico_id);
+                                    paciente.setPaciente_id(paciente_id);
 
                                     paciente.newConsulta();
 
@@ -285,10 +283,10 @@ public class MedicalSys {
 
                                     paciente.setData_hora(data_hora);
                                     paciente.setMotivo_C(motivo_C);
-                                    medico.setMedico_id(medico_id);
-                                    medico.setPaciente_id(paciente_id);
+                                    paciente.setMedico_id(medico_id);
+                                    paciente.setPaciente_id(paciente_id);
 
-                                    medico.setConsulta_id(consulta_id);
+                                    paciente.setConsulta_id(consulta_id);
 
                                     paciente.updateConsulta();
                                     break;
@@ -298,7 +296,7 @@ public class MedicalSys {
 
                                     consulta_id = Integer.parseInt(JOptionPane.showInputDialog("Inserir o id da consulta que quer visualizar"));
 
-                                    medico.setConsulta_id(consulta_id);
+                                    paciente.setConsulta_id(consulta_id);
 
                                     paciente.viewConsulta();
                                     break;
@@ -307,7 +305,7 @@ public class MedicalSys {
                                     /*DELETE APPOINTMENT*/
                                     consulta_id = Integer.parseInt(JOptionPane.showInputDialog("Inserir o id da consulta que quer deletar"));
 
-                                    medico.setConsulta_id(consulta_id);
+                                    paciente.setConsulta_id(consulta_id);
 
                                     paciente.deleteConsulta();
                                     break;
@@ -323,11 +321,11 @@ public class MedicalSys {
 
                     case 6:
                         /*VIEW PRESCRIPTION*/
-                        prescricao_id = Integer.parseInt(JOptionPane.showInputDialog("Inserir o id da prescrição que quer atualizar"));
+                        prescricao_id = Integer.parseInt(JOptionPane.showInputDialog("Inserir o id da prescrição que quer visualizar"));
 
-                        medico.setPrescricao_id(prescricao_id);
+                        paciente.setPrescricao_id(prescricao_id);
 
-                        medico.viewPrescricao();
+                        paciente.viewPrescricao();
                         break;
 
                     case 0:

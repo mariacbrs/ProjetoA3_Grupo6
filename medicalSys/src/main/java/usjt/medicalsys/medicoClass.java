@@ -167,7 +167,7 @@ public class medicoClass {
     //Prescription Methods:
     public void newPrescricao() {
 
-        String sql = "INSERT INTO prescricao(descricao, medico_id, paciente_id, consulta_id) VALUES (?, ?, ?, ?) ";
+        String sql = "INSERT INTO prescricao(descricao, medico_id, paciente_id) VALUES (?, ?, ?) ";
 
         ConnectionFactory nConnection = new ConnectionFactory();
 
@@ -178,7 +178,7 @@ public class medicoClass {
             ps.setString(1, getDescricao());
             ps.setInt(2, getMedico_id());
             ps.setInt(3, getPaciente_id());
-            ps.setInt(4, getConsulta_id());
+
 
             ps.execute();
 
@@ -191,7 +191,7 @@ public class medicoClass {
 
     public void updatePrescricao() {
 
-        String sql = "UPDATE prescricao SET descricao = ?, medico_id = ?, paciente_id = ?, consulta_id = ? WHERE prescricao_id = ? ";
+        String sql = "UPDATE prescricao SET descricao = ?, medico_id = ?, paciente_id = ? WHERE prescricao_id = ? ";
 
         ConnectionFactory nConnection = new ConnectionFactory();
 
@@ -202,8 +202,7 @@ public class medicoClass {
             ps.setString(1, getDescricao());
             ps.setInt(2, getMedico_id());
             ps.setInt(3, getPaciente_id());
-            ps.setInt(4, getConsulta_id());
-            ps.setInt(5, getPrescricao_id());
+            ps.setInt(4, getPrescricao_id());
 
             ps.execute();
 
@@ -235,8 +234,7 @@ public class medicoClass {
                         + "Prescrição ID: " + rs.getInt("prescricao_id") + "<br>"
                         + "Descrição: " + rs.getString("descricao") + "<br>"
                         + "Médico ID: " + rs.getString("medico_id") + "<br>"
-                        + "Paciente ID: " + rs.getString("paciente_id") + "<br>"
-                        + "Consulta ID: " + rs.getString("consulta_id")
+                        + "Paciente ID: " + rs.getString("paciente_id")
                         + "</div>"
                         + "</html>";
 
